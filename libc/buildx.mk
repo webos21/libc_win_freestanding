@@ -63,7 +63,7 @@ module_build_src_mk    = $(wildcard src/*.c) $(wildcard string/*_wrapper.S)
 module_build_src_ex    = 
 module_build_cflags    = -nostdinc -I$(current_dir_abs)/include -I$(current_dir_abs)/include/kernel
 module_build_ldflags   = -L$(module_dir_output_lib) $(module_dir_output_lib)/$(build_opt_a_pre)crt.$(build_opt_a_ext) \
-                            -lkernel32 -lntdll c.def
+                            -L/DevSoft/mingw64-481-posix-sjlj/x86_64-w64-mingw32/lib32 -lkernel32 c.def
 module_build_target_a  = $(build_opt_a_pre)c.$(build_opt_a_ext)
 module_build_target_so = $(build_opt_so_pre)c.$(build_opt_so_ext)
 
@@ -151,8 +151,7 @@ $(module_build_target_so): $(module_link_shared)
 		$(build_opt_ld_so)$(module_build_target_so) \
 		-o $(module_dir_target)/$(module_build_target_so) \
 		$(module_link_shared) \
-		$(module_build_ldflags) \
-		$(build_opt_ld_mgwcc)
+		$(module_build_ldflags)
 	@echo "================================================================"
 
 
