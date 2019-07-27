@@ -70,7 +70,7 @@ build_opt_exe_ext  = .exe
 
 build_opt_c        = -g -O3 \
                         -Wall -Wextra -Wdeclaration-after-statement \
-                        -nostdinc -ffreestanding \
+                        -ffreestanding \
                         -fno-stack-check -fno-stack-protector -mno-stack-arg-probe \
                         -ffunction-sections -fdata-sections
 build_opt_cxx      = -g -O3 \

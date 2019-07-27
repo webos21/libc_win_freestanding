@@ -17,5 +17,3 @@ LIBRARY	"c"
 EXPORTS
 
 print_msg
-malloc
-free

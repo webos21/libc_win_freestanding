@@ -94,7 +94,7 @@ prepare:
 
 
 do_build:
-	@$(MAKE) -C crt    -f buildx.mk TARGET=$(TARGET)
+#	@$(MAKE) -C crt    -f buildx.mk TARGET=$(TARGET)
 	@$(MAKE) -C libc   -f buildx.mk TARGET=$(TARGET)
 	@$(MAKE) -C sample -f buildx.mk TARGET=$(TARGET)
 
