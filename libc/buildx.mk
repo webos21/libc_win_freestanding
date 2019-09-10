@@ -163,7 +163,7 @@ post:
 	@echo "================================================================"
 	@echo "OUTPUT : $(current_dir_abs)"
 	@echo "----------------------------------------------------------------"
-	$(CP) -R $(current_dir_abs)/include/* $(module_dir_output_inc)
+#	$(CP) -R $(current_dir_abs)/include/* $(module_dir_output_inc)
 	$(TEST_FILE) $(module_dir_target)/$(module_build_target_a) $(TEST_THEN) \
 		$(CP) $(module_dir_target)/$(module_build_target_a) $(module_dir_output_lib) \
 	$(TEST_END)
