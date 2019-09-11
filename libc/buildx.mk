@@ -62,7 +62,7 @@ module_build_src_bin   =
 module_build_src_mk    = $(wildcard src/*.c)
 ### $(wildcard string/*_wrapper.S) string/strcpy.S
 module_build_src_ex    = 
-module_build_cflags    = 
+module_build_cflags    = -I$(current_dir_abs)/incp
 ### -nostdinc -I$(current_dir_abs)/include -I$(current_dir_abs)/include/kernel
 ifeq (mingw,$(findstring mingw, $(TARGET)))
 module_build_cflags   += -I$(current_dir_abs)/win/include 
@@ -164,6 +164,7 @@ post:
 	@echo "OUTPUT : $(current_dir_abs)"
 	@echo "----------------------------------------------------------------"
 #	$(CP) -R $(current_dir_abs)/include/* $(module_dir_output_inc)
+	$(CP) -R $(current_dir_abs)/incp/* $(module_dir_output_inc)
 	$(TEST_FILE) $(module_dir_target)/$(module_build_target_a) $(TEST_THEN) \
 		$(CP) $(module_dir_target)/$(module_build_target_a) $(module_dir_output_lib) \
 	$(TEST_END)

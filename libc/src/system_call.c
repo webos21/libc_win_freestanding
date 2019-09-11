@@ -17,7 +17,11 @@ static void print_last_error() {
 	OutputDebugStringA(lpMsgBuf);
 }
 
-static void attach_console() {
+static void setup_console() {
+	/* Need to implement "_initterm" on MSVCRT */
+	/* Need to implement "_initterm" on MSVCRT */
+	/* Need to implement "_initterm" on MSVCRT */
+
 	if (!AttachConsole(ATTACH_PARENT_PROCESS)) {
 		if (GetLastError() != ERROR_ACCESS_DENIED) { //already has a console
 			if (!AttachConsole(GetCurrentProcessId())) {
@@ -33,6 +37,7 @@ static void attach_console() {
 			}
 		} else {
 			OutputDebugStringA("Already HAS Console(out)!!!");
+
 		}
 	} else {
 		OutputDebugStringA("ATTACH_PARENT_PROCESS");
@@ -42,7 +47,7 @@ static void attach_console() {
 int print_msg(char *msg, int mlen) {
 	DWORD wb = 0;
 
-#if 1
+#if 0
 	HANDLE hFile;
 
 	hFile = CreateFileA("test.txt", GENERIC_READ | GENERIC_WRITE, 0, NULL,
@@ -61,7 +66,7 @@ int print_msg(char *msg, int mlen) {
 #else
 	HANDLE stdout;
 
-	attach_console();
+	setup_console();
 
 	stdout = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (stdout == NULL) {
@@ -82,6 +87,8 @@ BOOL __stdcall DllMainCRTStartup(HINSTANCE hinstDLL, DWORD fdwReason,
 	(void) (hinstDLL);
 	(void) (fdwReason);
 	(void) (lpvReserved);
+
+	setup_console();
 
 	OutputDebugStringA("DllMainCRTStartup!!!");
 
