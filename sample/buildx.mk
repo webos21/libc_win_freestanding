@@ -133,8 +133,8 @@ $(module_target_bin): $(module_link_ex)
 		$(module_build_ldflags) \
 		-o $(module_dir_target)/$(module_target_bin) \
 		$(module_link_ex) \
-		-lc \
-		$(build_opt_ld_mgwcc)
+		-lc
+#		$(build_opt_ld_mgwcc)
 	@echo "================================================================"
 
 post:
