@@ -129,14 +129,13 @@ $(module_target_bin): $(module_link_ex)
 	@echo "BUILD : $(module_target_bin)"
 	@echo "----------------------------------------------------------------"
 	$(build_tool_linker) \
-		$(build_opt_ld) \
+		$(build_opt_ld) -ffreestanding \
 		$(module_build_ldflags) \
 		-o $(module_dir_target)/$(module_target_bin) \
 		$(module_link_ex) \
 		-lc \
 		$(build_opt_ld_mgwcc)
 	@echo "================================================================"
-
 
 post:
 	@echo "================================================================"

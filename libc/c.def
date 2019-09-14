@@ -16,4 +16,5 @@
 LIBRARY	"c"
 EXPORTS
 
-print_msg
+  debug_msg
+  print_msg

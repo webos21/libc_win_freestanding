@@ -60,6 +60,7 @@ module_dir_output_test = $(module_dir_output_base)/test
 # PREPARE : Build Options
 module_build_src_bin   = 
 module_build_src_mk    = $(wildcard src/*.c)
+### $(wildcard msvcrt/*.c)
 ### $(wildcard string/*_wrapper.S) string/strcpy.S
 module_build_src_ex    = 
 module_build_cflags    = -I$(current_dir_abs)/incp
@@ -73,7 +74,7 @@ module_build_target_so = $(build_opt_so_pre)c.$(build_opt_so_ext)
 
 # PREPARE : Set VPATH!!
 vpath %.c $(current_dir_abs)/src
-vpath %.S $(current_dir_abs)/string
+#vpath %.c $(current_dir_abs)/msvcrt
 
 # PREPARE : Build Targets
 module_objs_a_tmp0     = $(patsubst %.c,%.o,$(module_build_src_mk))
