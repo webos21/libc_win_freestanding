@@ -36,4 +36,11 @@ typedef unsigned int        size_t;
 #	endif // _WIN64
 #endif // !_SIZE_T_DEFINED_
 
+#ifndef __WCHAR_TYPE__
+#define __WCHAR_TYPE__ int
 #endif
+#ifndef __cplusplus
+typedef __WCHAR_TYPE__ wchar_t;
+#endif
+
+#endif /* _STDDEF_H */

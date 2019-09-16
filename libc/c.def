@@ -18,3 +18,37 @@ EXPORTS
 
   debug_msg
   print_msg
+
+  dlopen
+  dlerror
+  dlsym
+  dlclose
+
+  abort
+  exit
+
+  memset
+  memcpy
+
+  calloc
+  free
+  malloc
+  memalign
+  posix_memalign
+  realloc
+  valloc
+  pvalloc
+  mallinfo
+  mallopt
+  malloc_trim
+  malloc_stats
+  malloc_usable_size
+  malloc_footprint
+  malloc_max_footprint
+  malloc_footprint_limit
+  malloc_set_footprint_limit
+;  malloc_inspect_all
+  independent_calloc
+  independent_comalloc
+  bulk_free
+
