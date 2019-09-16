@@ -551,7 +551,9 @@ MAX_RELEASE_CHECK_RATE   default: 4095 unless not HAVE_MMAP
 #define LACKS_STRING_H
 #define LACKS_STRINGS_H
 #define LACKS_SYS_TYPES_H
+#ifndef __MINGW32__  /* added for MINGW32 by cmjo */
 #define LACKS_ERRNO_H
+#endif
 #define LACKS_SCHED_H
 #ifndef MALLOC_FAILURE_ACTION
 #define MALLOC_FAILURE_ACTION
