@@ -37,4 +37,5 @@ if [ -r "$BUILD_CONF" ]; then
 fi
 
 # Set the Build Path
-export PATH=$BUILD_TOOLCHANIN_BIN;$PATH
+export PATH=$BUILD_TOOLCHANIN_BIN:$PATH
+
